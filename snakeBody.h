@@ -1,8 +1,8 @@
 #include <graphics.h>
 
-enum DIR {LEFT , UP , RIGHT , DOWN};        // ENUM MAKES THE WORK EASY BY PROVIDING NAMES INSTEAD OF NUMBERS
+enum DIR {LEFT , UP , RIGHT , DOWN};       
 
-////// POSITION STRUCTURE ////// -- ESPICIALLY TO BE USED IN SNAKE ONLY DUE TO ITS PRESET VALUES
+////// POSITION STRUCTURE ////// -- ESPICIALLY TO BE USED IN SNAKE ONLY DUE TO ITS CURRENT VALUES
 struct POS
 {
        int x,y;
@@ -17,14 +17,14 @@ struct POS
 class snakeBody
 {
 private:
-        POS arr[31];            // THIHS ARRAY IS GOING TO CONTAIN THE POSITIONS OF WHOLE SNAKE
+        POS arr[31];            // THIS ARRAY IS GOING TO CONTAIN THE POSITIONS OF WHOLE SNAKE
         int direction;          // WORKING WITH ENUM !!!
-        int length;             // OBVIOUSLY LENGTH
+        int length;             // LENGTH
 public :
         snakeBody()
         {
-              arr[0].x = 30;        // PROVIDING THE SNAKEHEAD ITS INITIAL VALUE
-              arr[0].y = 30;        // PROVIDING THE SNAKEHEAD ITS INITIAL VALUE
+              arr[0].x = 30;        // INITIALIZATION OF SNAKE HEAD
+              arr[0].y = 30;        // INITIALIZATION OF SNAKE HEAD
               length = 2;           // INITILAL LENGTH = 2
               direction = RIGHT;    // GOING IN RIGHT DIRECTION
         }
@@ -32,9 +32,9 @@ public :
         void appendSnake();         // IT IS RESPONSIBLE FOR INCREMENT IN SNAKE'S LENGTH
         void changeDirTo(int);
         int update();
-        int getPosx();              // THESE FUNCTIONS ARE FOR OBVIOUS PURPOSES
-        int getPosy();              // THESE FUNCTIONS ARE FOR OBVIOUS PURPOSES
-        int getlength();            // THESE FUNCTIONS ARE FOR OBVIOUS PURPOSES
+        int getPosx();           
+        int getPosy();              
+        int getlength();            
 
 };
 
@@ -72,13 +72,13 @@ void snakeBody::changeDirTo(int newdir)
      }
 }
 
-int snakeBody::update()                                                     // THIS FUNCTION ENFORCES THE BASIC
-{                                                                           // ALGORITHM FOR MOVING SNAKE
-     for(int i=1 ; i<length ; ++i)                                          // BY PROVIDING ALL THE PREVIOUS PARTS
-     {                                                                      // THE COORDINATES OF CURRENT PART
-             if(arr[0].x == arr[i].x && arr[0].y == arr[i].y)               // HENCE [1] GETS THE POSITION OF [0]
-             {                                                              // [2] GETS THE POSITION OF [1] AND SO ON...
-                         return 0;                                          // AND LASTLY HEAD([0]) IS GIVEN LATEST VALUES
+int snakeBody::update()                                                  
+{                                                                        
+     for(int i=1 ; i<length ; ++i)                                         
+     {                                                                      
+             if(arr[0].x == arr[i].x && arr[0].y == arr[i].y)               
+             {                                                            
+                         return 0;                                          
              }
      }
      for(int i=length ; i>=0 ; --i)
