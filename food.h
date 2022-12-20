@@ -29,11 +29,10 @@ void food::generate(int snakeHeadx, int snakeHeady)     // GENERATE NEW POSITION
           generate(snakeHeadx, snakeHeady);
 }
 
-bool food::update(int snakeHeadx, int snakeHeady)       // GIVE US THE STATUS OF THATFOOD !!
+bool food::update(int snakeHeadx, int snakeHeady)       // GIVE US THE STATUS OF THAT DAMN FOOD !!
 {
      if (foodPos.x == snakeHeadx && foodPos.y == snakeHeady)
           return true;
      else
           return false;
 }
-
