@@ -58,7 +58,7 @@ int main()
                  rectangle(780,20,800,250);
                  rectangle(510,490,800,510);
                  rectangle(780,270,800,490);
-                 setfillstyle(SOLID_FILL, BLUE);
+                 setfillstyle(SOLID_FILL, WHITE);
                  floodfill(15,250,BLUE);
                  floodfill(250,15,BLUE);
                  floodfill(495,250,BLUE);
@@ -109,4 +109,3 @@ int main()
     getch();
     closegraph();
 }
-
