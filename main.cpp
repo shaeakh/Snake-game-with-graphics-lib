@@ -73,7 +73,7 @@ int main()
 
             // SCORE
                  settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 5);
-                 setcolor(GREEN);
+                 setcolor(YELLOW);
                  outtextxy(550, 70, "LENGTH");
                  outtextxy(520, 130, "ACHIEVED");
                  length = body.getlength();
