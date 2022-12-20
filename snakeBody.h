@@ -1,8 +1,8 @@
 #include <graphics.h>
 
-enum DIR {LEFT , UP , RIGHT , DOWN};
+enum DIR {LEFT , UP , RIGHT , DOWN};        // ENUM MAKES THE WORK EASY BY PROVIDING NAMES INSTEAD OF NUMBERS
 
-//POSITION STRUCTURE
+////// POSITION STRUCTURE ////// -- ESPICIALLY TO BE USED IN SNAKE ONLY DUE TO ITS PRESET VALUES
 struct POS
 {
        int x,y;
@@ -13,19 +13,19 @@ struct POS
        }
 };
 
-// SNAKE CLASS
+////// SNAKE CLASS //////
 class snakeBody
 {
 private:
-        POS arr[31];            // THIS ARRAY IS GOING TO CONTAIN THE POSITIONS OF WHOLE SNAKE
-        int direction;           
-        int length;             // LENGTH
+        POS arr[31];            // THIHS ARRAY IS GOING TO CONTAIN THE POSITIONS OF WHOLE SNAKE
+        int direction;          // WORKING WITH ENUM !!!
+        int length;             // OBVIOUSLY LENGTH
 public :
         snakeBody()
         {
-              arr[0].x = 30;        // THE SNAKEHEAD ITS INITIAL VALUE
-              arr[0].y = 30;        // SNAKEHEAD ITS INITIAL VALUE
-              length = 2;           // INITIAL LENGTH = 2
+              arr[0].x = 30;        // PROVIDING THE SNAKEHEAD ITS INITIAL VALUE
+              arr[0].y = 30;        // PROVIDING THE SNAKEHEAD ITS INITIAL VALUE
+              length = 2;           // INITILAL LENGTH = 2
               direction = RIGHT;    // GOING IN RIGHT DIRECTION
         }
         void drawSnake();
